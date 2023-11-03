@@ -1,17 +1,16 @@
 import React from "react";
 
-const TodoList = (props) => {
-  console.log(props.todos, "props");
+const TodoList = ({ todos, deleteTask, getEditedObj, changeStatus }) => {
   return (
     <div>
       <h2>Todo List:</h2>
       <ul>
-        {props.todos.map((task) => (
+        {todos.map((task) => (
           <li className="flex" key={task.id}>
-            <h5>{task.task}</h5>
-            <input type="checkbox" />
-            <button>Edit</button>
-            <button>Delete</button>
+            <h5 className={task.status === true ? "done" : ""}>{task.task}</h5>
+            <input onChange={() => changeStatus(task.id)} type="checkbox" />
+            <button onClick={() => getEditedObj(task.id)}>Edit</button>
+            <button onClick={() => deleteTask(task.id)}>Delete</button>
           </li>
         ))}
       </ul>
