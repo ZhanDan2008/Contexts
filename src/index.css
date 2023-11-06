@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.active {
+  color: red;
+}
+
 .done {
   text-decoration: line-through;
 }
