@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const AddTodo = ({ addTask }) => {
   const [task, setTask] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   function createTodo(e) {
     e.preventDefault();
@@ -19,21 +20,37 @@ const AddTodo = ({ addTask }) => {
     addTask(newTask);
 
     setTask("");
+    setIsModalOpen(false);
   }
 
   return (
     <div>
-      <h2>Add Todo Component</h2>
-      <form onSubmit={createTodo}>
-        <input
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-          type="text"
-          name=""
-          id=""
-        />
-        <button type="submit">Click</button>
-      </form>
+      <button className="addTodoBtn" onClick={() => setIsModalOpen(true)}>
+        Add Todo
+      </button>
+      {isModalOpen && (
+        <div className="addTodoModal">
+          <div className="addTodoModal-content">
+            <span className="close" onClick={() => setIsModalOpen(false)}>
+              &times;
+            </span>
+            <h2 className="addTaskForm-title">Add Task</h2>
+            <form className="addtaskForm" onSubmit={createTodo}>
+              <input
+                value={task}
+                onChange={(e) => setTask(e.target.value)}
+                placeholder="enter new task"
+                type="text"
+                id="addTaskInp"
+              />{" "}
+              <br />
+              <button className="addTaskFormBtn" type="submit">
+                Done
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
