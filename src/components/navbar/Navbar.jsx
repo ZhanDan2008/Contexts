@@ -13,6 +13,7 @@ function Appbar() {
           <Nav className="me-auto" style={{ display: "flex", gap: "20px" }}>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/add">Add</NavLink>
+            <NavLink to="/users">Users</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

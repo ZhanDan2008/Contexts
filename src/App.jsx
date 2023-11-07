@@ -5,7 +5,6 @@ import MainRoutes from "./components/MainRoutes";
 const App = () => {
   return (
     <div>
-      <Appbar />
       <MainRoutes />
     </div>
   );
