@@ -1,5 +1,16 @@
 {
   "products": [
-    
+    {
+      "title": "Собакен",
+      "price": "123456",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUFKYcXuM4onp47mQIIb5AgwVG6EXUWuZ6HGw7-7s&s",
+      "id": 1
+    },
+    {
+      "title": "cat",
+      "price": "1234567",
+      "image": "https://i1.sndcdn.com/avatars-000216424319-pvx44j-t500x500.jpg",
+      "id": 2
+    }
   ]
 }
