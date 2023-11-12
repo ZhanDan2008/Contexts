@@ -35,3 +35,10 @@ root.render(
       <остальные теги>
   </ProductContextProvider>
 );
+7.
+чтобы юзать то что вы передали в контекст, в файле где вам нужно, импортируйте переменную которую вы экспортируете.
+импортируй useContext
+import React, { useContext } from "react";
+8.
+в функции деструктуризиуете
+  const {addProduct} = useContext(productContext)
