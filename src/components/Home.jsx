@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { productContext } from "../contexts/productContext";
 
-const Home = ({ getProducts, products, deleteProduct }) => {
+const Home = () => {
+  const {getProducts,products, deleteProduct} = useContext(productContext)
   useEffect(() => {
     getProducts();
   }, []);
@@ -14,7 +16,7 @@ const Home = ({ getProducts, products, deleteProduct }) => {
     <div style={{ display: "flex", gap: "200px", flexWrap: "wrap" }}>
       {products.map((card) => (
         <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={card.image} />
+          <Card.Img variant="top" src={card.image}/>
           <Card.Body>
             <Card.Title>Title: {card.title}</Card.Title>
             <Card.Text>Price: {card.price} $</Card.Text>

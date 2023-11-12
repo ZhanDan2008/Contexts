@@ -1,0 +1,37 @@
+1.
+Создаем диреткорию для контекстов
+2.
+создаем файл, пишем базовую разметку
+3.
+импортируй 
+import React, { createContext } from 'react';
+4.
+созлай переенную вне функции 
+export const <азвание переменной> = createContext()
+5.
+функция должная принимать children
+в функции пишете логику которую вы хотите передать
+в конце обязательно возвращаете:
+    return (
+        <<название переменной>.Provider value={{
+            products,
+            updateProduct,
+            oneProduct,
+            getOneProduct,
+            addProduct,
+            getProducts,
+            deleteProduct,
+        }}>
+            {children}
+        </<азвание переменной>.Provider>
+    );
+6.
+В файле index.js:
+импортируйте функцию контекста.
+import { <функция> } from <путь>;
+полностью оберните все в ваш тег контекста:
+root.render(
+  <ProductContextProvider>
+      <остальные теги>
+  </ProductContextProvider>
+);

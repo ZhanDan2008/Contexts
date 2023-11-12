@@ -6,40 +6,19 @@ import Layout from "./Layout";
 import UsersPage from "./UsersPage";
 import UserDetails from "./UserDetails";
 import EditForm from "./EditForm";
+import Counter from "./Counter";
 
-const MainRoutes = ({
-  addProduct,
-  getProducts,
-  products,
-  deleteProduct,
-  getOneProduct,
-  oneProduct,
-  updateProduct,
-}) => {
+const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route
-          index
-          element={
-            <Home
-              getProducts={getProducts}
-              products={products}
-              deleteProduct={deleteProduct}
-            />
+        <Route path="/count" element = {<Counter/>}/>
+        <Route index element={<Home/>}/>
+        <Route path="/edit/:id" element={
+            <EditForm/>
           }
         />
-        <Route
-          path="edit/:id"
-          element={
-            <EditForm
-              updateProduct={updateProduct}
-              oneProduct={oneProduct}
-              getOneProduct={getOneProduct}
-            />
-          }
-        />
-        <Route path="/add" element={<AddForm addProduct={addProduct} />} />
+        <Route path="/add" element={<AddForm />} />
         <Route path="/users" element={<UsersPage />} />
         <Route path="/users/:id" element={<UserDetails />} />
       </Route>

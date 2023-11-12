@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { productContext } from "../contexts/productContext";
 
-const EditForm = ({ getOneProduct, oneProduct, updateProduct }) => {
+const EditForm = () => {
+  const { getOneProduct, oneProduct, updateProduct } = useContext(productContext)
   const [editedObj, setEditedObj] = useState({
     title: "",
     price: "",
